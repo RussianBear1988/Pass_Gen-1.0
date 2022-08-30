@@ -22,7 +22,7 @@ def password():
         passord_key.append(symbol)
 
     for special in range(random.randint(3, 8)):
-        symbol_list = '!@#$%^&*()_+{}:"|>?<~'
+        symbol_list = '!@#$%^&*()_+{}:"|>?<~╥↕╕'
         special = random.choice(symbol_list)
         passord_key.append(special)
     random.shuffle(passord_key)
