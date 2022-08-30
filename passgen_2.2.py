@@ -21,8 +21,8 @@ def password():
         symbol = random.choice(letter_h)
         passord_key.append(symbol)
 
-    for special in range(random.randint(3, 8)):
-        symbol_list = '!@#$%^&*()_+{}:"|>?<~╥↕╕'
+    for special in range(random.randint(3, 9)):
+        symbol_list = '!@#$%^&*()_+{}:"|>?<~'
         special = random.choice(symbol_list)
         passord_key.append(special)
     random.shuffle(passord_key)
