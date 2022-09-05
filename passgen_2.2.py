@@ -2,6 +2,7 @@ import random
 
 print("Этот код генерирует случайный пароль из стандартного набора переменных")
 run = 1
+iterat = 0
 
 def lengh_check(length_input):
     try:
@@ -22,6 +23,7 @@ def lengh_check(length_input):
 
 def password(length_input):
     passord_key = []
+    global iterat
 
     for number in range(random.randint(2, 7)):
         number = random.randint(0, 9)
@@ -44,13 +46,15 @@ def password(length_input):
     random.shuffle(passord_key)
     real_password = "".join(map(str, passord_key))
 
-    if len(real_password) == length_input:
-        print(f"""Ваш новый пароль:
-{real_password}""")
-        print(f"Он состоит из {len(real_password)} символов.")
-        return real_password
-    else:
+    if len(real_password) != length_input:
+        iterat = iterat + 1
         password(length_input)
+    else:
+        print(f"""Ваш новый пароль:
+        {real_password}""")
+        print(f"Он состоит из {len(real_password)} символов.")
+        print(f"На это потребовалось {iterat} попыток")
+        return real_password
 
 
 while run == 1:
